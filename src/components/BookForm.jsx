@@ -3,7 +3,8 @@ import { X, Save } from 'lucide-react';
 
 const GENRES = [
   'Fiction', 'Non-Fiction', 'Science Fiction', 'Fantasy', 'Mystery',
-  'Biography', 'Self-Help', 'Historical Fiction', 'Thriller', 'Romance'
+  'Biography', 'Self-Help', 'Historical Fiction', 'Thriller', 'Romance',
+  'Dystopian'
 ];
 
 export const BookForm = ({ isOpen, onClose, onSubmit, initialBook = null }) => {

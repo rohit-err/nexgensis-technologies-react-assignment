@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:5001';
+const API_BASE_URL = 'https://6a15efd991ff9a63de08ff83.mockapi.io';
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
   headers: {

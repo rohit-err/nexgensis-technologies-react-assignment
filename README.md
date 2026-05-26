@@ -1,59 +1,46 @@
 # Book Management System
 
-A production-grade, highly responsive single-page application (SPA) built with **React**, **Vite**, and **Tailwind CSS**. It delivers a seamless user experience for managing a collection of books, backed by a mock REST API using **JSON Server**.
+A modern, responsive Book Management System built with React, Vite, and Tailwind CSS. Features full CRUD operations, real-time search, genre filtering, and a polished dark mode UI.
 
 ---
 
 ## 🚀 Features
 
-- **Full CRUD Operations**: Create, read, update, and delete books in real time.
-- **Dynamic Search & Filtering**: Real-time searching by title or author, coupled with category filtering by genre.
-- **Custom Hooks**: Clean state orchestration and side-effect separation using the `useBooks` custom hook.
-- **Professional Form Validation**: Robust validation for titles, authors, genres, and page numbers with intuitive error states.
-- **Polished UI & Micro-interactions**: Sleek modern design featuring modal confirmations, responsive grids, load states, and toast notifications.
+- **Full CRUD Operations**: Create, read, update, and delete books
+- **Search**: Real-time search by title or author
+- **Filter**: Filter books by genre
+- **Dark Mode**: Toggle between light and dark themes
+- **Responsive Design**: Works seamlessly on mobile, tablet, and desktop
+- **Form Validation**: Comprehensive validation with error messages
+- **Loading States**: Skeleton loaders for better UX
+- **Error Handling**: User-friendly error messages with retry functionality
+- **Toast Notifications**: Success/error feedback for all operations
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Frontend Core**: React 18 & Vite
-- **Styling**: Tailwind CSS & Autoprefixer
-- **Icons**: Lucide React
-- **API Client**: Axios (configured with a central baseURL and request timeouts)
-- **Database/Mock API**: JSON Server (watching `db.json`)
-- **Process Orchestration**: Concurrently (runs the Vite dev server and JSON Server on one terminal command)
+- **React 18** - UI library
+- **Vite** - Build tool
+- **Tailwind CSS** - Styling
+- **Axios** - HTTP client
+- **MockAPI.io** - Mock REST API
+- **Lucide React** - Icons
 
 ---
 
 ## 📂 Project Structure
 
-```text
-├── db.json                     # Local mock database for JSON Server
-├── index.html                  # HTML entrypoint
-├── package.json                # Project dependencies and script runner configurations
-├── tailwind.config.js          # Tailwind CSS style overrides and theme configuration
-├── vite.config.js              # Vite configuration
-└── src/
-    ├── App.jsx                 # Application layout and global toast orchestrator
-    ├── index.css               # Base Tailwind imports and customized scrollbars/animations
-    ├── main.jsx                # DOM bootstrapping and React entrypoint
-    ├── components/             # Reusable UI components
-    │   ├── BookCard.jsx        # Book details grid item
-    │   ├── BookForm.jsx        # Unified add/edit validated form
-    │   ├── BookList.jsx        # Renders the card collections
-    │   ├── ConfirmModal.jsx    # Clean dialog for critical actions
-    │   ├── ErrorMessage.jsx    # User-friendly API failure feedback
-    │   ├── Filter.jsx          # Genre filter selection
-    │   ├── Loader.jsx          # Interactive CSS loading spinners
-    │   ├── Navbar.jsx          # Top branding and header bar
-    │   ├── SearchBar.jsx       # Real-time search query input
-    │   └── Toast.jsx           # Self-dismissing micro-notification banners
-    ├── hooks/
-    │   └── useBooks.js         # Domain-specific state controller and data fetcher
-    ├── pages/
-    │   └── Home.jsx            # Parent dashboard managing views, search state, and API triggers
-    └── services/
-        └── bookApi.js          # Unified Axios client and CRUD endpoints configuration
+```
+├── src/
+│   ├── components/       # Reusable UI components
+│   ├── hooks/           # Custom React hooks
+│   ├── pages/           # Page components
+│   ├── services/        # API service layer
+│   ├── App.jsx          # Root component
+│   └── main.jsx         # Entry point
+├── public/              # Static assets
+└── package.json         # Dependencies
 ```
 
 ---
@@ -62,18 +49,81 @@ A production-grade, highly responsive single-page application (SPA) built with *
 
 ### Prerequisites
 
-Ensure you have [Node.js](https://nodejs.org/) installed (v18+ recommended).
+- Node.js (v18 or higher)
+- npm or yarn
 
-### Installation & Run
+### Installation
 
-1. Install all required dependencies:
+1. Clone the repository:
+   ```bash
+   git clone <your-repo-url>
+   cd nexgensis-technologies-react-assignment
+   ```
+
+2. Install dependencies:
    ```bash
    npm install
    ```
 
-2. Spin up the Vite Dev Server and JSON Server simultaneously:
+3. Start the development server:
    ```bash
    npm run dev
    ```
 
-The application will launch at `http://localhost:5173`, and the mock REST server will be active at `http://localhost:5001`.
+4. Open [http://localhost:5173](http://localhost:5173) in your browser
+
+---
+
+## 🌐 Deployment
+
+### Deploy to Vercel
+
+1. Push your code to GitHub
+2. Go to [vercel.com](https://vercel.com) and sign in
+3. Click "New Project" and import your repository
+4. Vercel will auto-detect Vite settings
+5. Click "Deploy"
+
+### Deploy to Netlify
+
+1. Push your code to GitHub
+2. Go to [netlify.com](https://netlify.com) and sign in
+3. Click "Add new site" → "Import an existing project"
+4. Select your repository
+5. Build settings:
+   - Build command: `npm run build`
+   - Publish directory: `dist`
+6. Click "Deploy"
+
+---
+
+## 📝 API Configuration
+
+The app uses MockAPI.io for the backend. The API endpoint is configured in `src/services/bookApi.js`:
+
+```javascript
+const API_BASE_URL = 'https://6a15efd991ff9a63de08ff83.mockapi.io';
+```
+
+---
+
+## 🎯 Assignment Requirements
+
+✅ View books with title, author, genre, and publication year  
+✅ Add new books through a form  
+✅ Edit existing books  
+✅ Delete books with confirmation  
+✅ Search by title or author  
+✅ Filter by genre  
+✅ Clean, maintainable code with proper component structure  
+✅ API integration with MockAPI  
+✅ Loading states  
+✅ Error handling  
+✅ Professional styling with Tailwind CSS  
+✅ Fully deployed and functional  
+
+---
+
+## 📄 License
+
+MIT License - Created for NexGensis Technologies React Assignment
